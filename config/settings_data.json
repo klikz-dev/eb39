@@ -1,0 +1,971 @@
+{
+  "current": "Bloom",
+  "presets": {
+    "Bloom": {
+      "color--accent": "#c499fb",
+      "bg-color--body": "#ffffff",
+      "color--body": "#212121",
+      "color--alternative": "#ffffff",
+      "bg-color--panel": "#f0ecea",
+      "color--important": "#ca2f01",
+      "color--button": "#ffffff",
+      "bg-color--button": "#212121",
+      "color--header": "#212121",
+      "color--footer": "",
+      "bg-color--footer": "",
+      "bg-color--announcement": "#e6d4ff",
+      "announcement--alternative-text": false,
+      "color--collection--title": "#ffffff",
+      "typography--heading": "zurich_extended_n7",
+      "typography--heading--uppercase": false,
+      "typography--heading--size": "small",
+      "typography--accent": "helvetica_n4",
+      "typography--paragraph": "karla_n4",
+      "typography--paragraph--size": "medium",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo-height-range": 50,
+            "menu": "main-menu"
+          }
+        },
+        "framework--footer": {
+          "type": "framework--footer",
+          "blocks": {
+            "1584642445690": {
+              "type": "about",
+              "settings": {
+                "about-title": "",
+                "text": "<p>A short summary about your brand.<\/p>\n<p>&copy; Your brand name.<\/p>",
+                "subscribe--show-social-icons": true
+              }
+            },
+            "1584642448228": {
+              "type": "menu",
+              "settings": {
+                "menu-title": "",
+                "menu": "footer"
+              }
+            },
+            "1584642450700": {
+              "type": "subscribe",
+              "settings": {
+                "newsletter--heading": "",
+                "newsletter--info": "<p>Sign up to our mailing list<\/p>",
+                "subscribe--show-newsletter": true
+              }
+            }
+          },
+          "block_order": [
+            "1584642445690",
+            "1584642448228",
+            "1584642450700"
+          ],
+          "settings": {
+            "show-currency-selector": true,
+            "show-locale-selector": true,
+            "show-payment-icons": true
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "smart-payment-button": true,
+            "variant-style": "dropdowns",
+            "swatches-enabled": false,
+            "product-unavailable-form-show": false,
+            "low-in-stock-amount": 0,
+            "modal-enabled": true,
+            "hide-variant-media": false,
+            "loop-enabled": false,
+            "product-size-chart-enabled": false,
+            "product-size-chart-option": "size",
+            "product-size-chart-page-content": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "show-featured-image": true,
+            "show-vendor": false,
+            "products-per-row-range": 3
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "enabled": true,
+            "home-page-only": false,
+            "icon": "",
+            "text": "Add your announcement message with a bit more length",
+            "link": ""
+          }
+        },
+        "1522371405349": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": true,
+            "background-color": "accent",
+            "text-position": "left",
+            "text-width": "small",
+            "overlap": false,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371486135": {
+          "type": "index--collection",
+          "settings": {
+            "collection": "",
+            "max-products-range": 5
+          }
+        },
+        "1522371573233": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": false,
+            "background-color": "light",
+            "text-position": "center",
+            "text-width": "large",
+            "overlap": true,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371666643": {
+          "type": "framework--newsletter",
+          "settings": {
+            "background-color": "none",
+            "heading": "Subscribe to our newsletter",
+            "newsletter--subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1522371685670": {
+          "type": "framework--featured-text",
+          "settings": {
+            "background-color": "none",
+            "heading": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "1522371696540": {
+          "type": "framework--featured-video",
+          "settings": {
+            "video-url": "",
+            "image": "",
+            "full-width": true,
+            "background-color": "light",
+            "section-height": "regular",
+            "darken-video": true,
+            "alt-text": true,
+            "heading": "Video",
+            "sub-heading": "Add a subheading here",
+            "button-text": "button",
+            "button-url": ""
+          }
+        },
+        "1522371710166": {
+          "type": "framework--map",
+          "settings": {
+            "api-key": "",
+            "map-address": "391 Sutter St, San Francisco",
+            "background-color": "light",
+            "theme": "grayscale",
+            "heading": "Map",
+            "address": "<p>391 Sutter St,<br>San Francisco<br>CA 94108, USA<br><br>(555) 555-5555<\/p>",
+            "hours": "<p><strong>Monday - Friday<\/strong><br>12pm - 8pm<br><br><strong>Saturday - Sunday<\/strong><br>12pm - 5pm<\/p>",
+            "image": ""
+          }
+        },
+        "1522371753814": {
+          "type": "slideshow",
+          "blocks": {
+            "1522371753814-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            },
+            "1522371753814-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            }
+          },
+          "block_order": [
+            "1522371753814-0",
+            "1522371753814-1"
+          ],
+          "settings": {
+            "full-width": true,
+            "autoplay": false,
+            "transition_style": "default",
+            "rotate-frequency-range": 7
+          }
+        },
+        "1522371819571": {
+          "type": "framework--featured-grid",
+          "blocks": {
+            "1522371819571-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-2": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-3": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371970926": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371976471": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            }
+          },
+          "block_order": [
+            "1522371819571-0",
+            "1522371819571-1",
+            "1522371819571-2",
+            "1522371819571-3",
+            "1522371970926",
+            "1522371976471"
+          ],
+          "settings": {
+            "background-color": "light",
+            "spacing": true,
+            "alternative-color": false,
+            "text-position": "center",
+            "container-width": 4,
+            "width": 3,
+            "mobile-width": "2",
+            "title": "Featured grid",
+            "subtitle": "",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        }
+      },
+      "content_for_index": [
+        "1522371753814",
+        "1522371573233",
+        "1522371819571",
+        "1522371696540",
+        "1522371685670",
+        "1522371486135",
+        "1522371405349",
+        "1522371666643",
+        "1522371710166"
+      ]
+    },
+    "Fashion": {
+      "color--accent": "#f9cfd6",
+      "bg-color--body": "#ffffff",
+      "color--body": "#212121",
+      "color--alternative": "#ffffff",
+      "bg-color--panel": "rgba(0,0,0,0)",
+      "color--important": "#ca2f01",
+      "color--button": "#ffffff",
+      "bg-color--button": "#212121",
+      "color--header": "#212121",
+      "color--footer": "#212121",
+      "bg-color--footer": "",
+      "bg-color--announcement": "#f9cfd6",
+      "announcement--alternative-text": false,
+      "color--collection--title": "#ffffff",
+      "typography--heading": "trade_gothic_n4",
+      "typography--heading--uppercase": true,
+      "typography--heading--size": "small",
+      "typography--accent": "madera_n5",
+      "typography--paragraph": "roboto_n4",
+      "typography--paragraph--size": "medium",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo-height-range": 50,
+            "menu": "main-menu"
+          }
+        },
+        "framework--footer": {
+          "type": "framework--footer",
+          "blocks": {
+            "1584642445690": {
+              "type": "about",
+              "settings": {
+                "about-title": "",
+                "text": "<p>A short summary about your brand.<\/p>\n<p>&copy; Your brand name.<\/p>",
+                "subscribe--show-social-icons": true
+              }
+            },
+            "1584642448228": {
+              "type": "menu",
+              "settings": {
+                "menu-title": "",
+                "menu": "footer"
+              }
+            },
+            "1584642450700": {
+              "type": "subscribe",
+              "settings": {
+                "newsletter--heading": "",
+                "newsletter--info": "<p>Sign up to our mailing list<\/p>",
+                "subscribe--show-newsletter": true
+              }
+            }
+          },
+          "block_order": [
+            "1584642445690",
+            "1584642448228",
+            "1584642450700"
+          ],
+          "settings": {
+            "show-currency-selector": true,
+            "show-locale-selector": true,
+            "show-payment-icons": true
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "smart-payment-button": true,
+            "variant-style": "dropdowns",
+            "swatches-enabled": false,
+            "product-unavailable-form-show": false,
+            "low-in-stock-amount": 0,
+            "modal-enabled": true,
+            "hide-variant-media": false,
+            "loop-enabled": false,
+            "product-size-chart-enabled": false,
+            "product-size-chart-option": "size",
+            "product-size-chart-page-content": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "show-featured-image": true,
+            "show-vendor": false,
+            "products-per-row-range": 3
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "enabled": true,
+            "home-page-only": false,
+            "icon": "",
+            "text": "Add your announcement message with a bit more length",
+            "link": ""
+          }
+        },
+        "1522371405349": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": true,
+            "background-color": "accent",
+            "text-position": "left",
+            "text-width": "small",
+            "overlap": false,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371486135": {
+          "type": "index--collection",
+          "settings": {
+            "collection": "",
+            "max-products-range": 5
+          }
+        },
+        "1522371573233": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": false,
+            "background-color": "light",
+            "text-position": "center",
+            "text-width": "large",
+            "overlap": true,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371666643": {
+          "type": "framework--newsletter",
+          "settings": {
+            "background-color": "none",
+            "heading": "Subscribe to our newsletter",
+            "newsletter--subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1522371685670": {
+          "type": "framework--featured-text",
+          "settings": {
+            "background-color": "none",
+            "heading": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "1522371696540": {
+          "type": "framework--featured-video",
+          "settings": {
+            "video-url": "",
+            "image": "",
+            "full-width": true,
+            "background-color": "light",
+            "section-height": "regular",
+            "darken-video": true,
+            "alt-text": true,
+            "heading": "Video",
+            "sub-heading": "Add a subheading here",
+            "button-text": "button",
+            "button-url": ""
+          }
+        },
+        "1522371710166": {
+          "type": "framework--map",
+          "settings": {
+            "api-key": "",
+            "map-address": "391 Sutter St, San Francisco",
+            "background-color": "light",
+            "theme": "grayscale",
+            "heading": "Map",
+            "address": "<p>391 Sutter St,<br>San Francisco<br>CA 94108, USA<br><br>(555) 555-5555<\/p>",
+            "hours": "<p><strong>Monday - Friday<\/strong><br>12pm - 8pm<br><br><strong>Saturday - Sunday<\/strong><br>12pm - 5pm<\/p>",
+            "image": ""
+          }
+        },
+        "1522371753814": {
+          "type": "slideshow",
+          "blocks": {
+            "1522371753814-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            },
+            "1522371753814-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            }
+          },
+          "block_order": [
+            "1522371753814-0",
+            "1522371753814-1"
+          ],
+          "settings": {
+            "full-width": true,
+            "autoplay": false,
+            "transition_style": "default",
+            "rotate-frequency-range": 7
+          }
+        },
+        "1522371819571": {
+          "type": "framework--featured-grid",
+          "blocks": {
+            "1522371819571-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-2": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-3": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371970926": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371976471": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            }
+          },
+          "block_order": [
+            "1522371819571-0",
+            "1522371819571-1",
+            "1522371819571-2",
+            "1522371819571-3",
+            "1522371970926",
+            "1522371976471"
+          ],
+          "settings": {
+            "background-color": "light",
+            "spacing": true,
+            "alternative-color": false,
+            "text-position": "center",
+            "container-width": 4,
+            "width": 3,
+            "mobile-width": "2",
+            "title": "Featured grid",
+            "subtitle": "",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        }
+      },
+      "content_for_index": [
+        "1522371753814",
+        "1522371573233",
+        "1522371685670",
+        "1522371819571",
+        "1522371696540",
+        "1522371486135",
+        "1522371405349",
+        "1522371666643",
+        "1522371710166"
+      ]
+    },
+    "Books": {
+      "color--accent": "#197bbd",
+      "bg-color--body": "#ffffff",
+      "color--body": "#212121",
+      "color--alternative": "#ffffff",
+      "bg-color--panel": "#ffffff",
+      "color--important": "#ca2f01",
+      "color--button": "#ffffff",
+      "bg-color--button": "#212121",
+      "color--header": "#212121",
+      "color--footer": "#212121",
+      "bg-color--footer": "",
+      "bg-color--announcement": "#212121",
+      "announcement--alternative-text": true,
+      "color--collection--title": "#ffffff",
+      "typography--heading": "itc_caslon_no_224_n5",
+      "typography--heading--uppercase": false,
+      "typography--heading--size": "large",
+      "typography--accent": "avenir_next_n5",
+      "typography--paragraph": "itc_gamma_n4",
+      "typography--paragraph--size": "large",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo-height-range": 50,
+            "menu": "main-menu"
+          }
+        },
+        "framework--footer": {
+          "type": "framework--footer",
+          "blocks": {
+            "1584642445690": {
+              "type": "about",
+              "settings": {
+                "about-title": "",
+                "text": "<p>A short summary about your brand.<\/p>\n<p>&copy; Your brand name.<\/p>",
+                "subscribe--show-social-icons": true
+              }
+            },
+            "1584642448228": {
+              "type": "menu",
+              "settings": {
+                "menu-title": "",
+                "menu": "footer"
+              }
+            },
+            "1584642450700": {
+              "type": "subscribe",
+              "settings": {
+                "newsletter--heading": "",
+                "newsletter--info": "<p>Sign up to our mailing list<\/p>",
+                "subscribe--show-newsletter": true
+              }
+            }
+          },
+          "block_order": [
+            "1584642445690",
+            "1584642448228",
+            "1584642450700"
+          ],
+          "settings": {
+            "show-currency-selector": true,
+            "show-locale-selector": true,
+            "show-payment-icons": true
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "smart-payment-button": true,
+            "variant-style": "dropdowns",
+            "swatches-enabled": false,
+            "product-unavailable-form-show": false,
+            "low-in-stock-amount": 0,
+            "modal-enabled": true,
+            "hide-variant-media": false,
+            "loop-enabled": false,
+            "product-size-chart-enabled": false,
+            "product-size-chart-option": "size",
+            "product-size-chart-page-content": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "show-featured-image": true,
+            "show-vendor": false,
+            "products-per-row-range": 3
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "enabled": true,
+            "home-page-only": false,
+            "icon": "",
+            "text": "Add your announcement message with a bit more length",
+            "link": ""
+          }
+        },
+        "1522371405349": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": true,
+            "background-color": "accent",
+            "text-position": "left",
+            "text-width": "small",
+            "overlap": false,
+            "transparent-overlap": false,
+            "alternative-color": true,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371486135": {
+          "type": "index--collection",
+          "settings": {
+            "collection": "",
+            "max-products-range": 5
+          }
+        },
+        "1522371573233": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": false,
+            "background-color": "light",
+            "text-position": "center",
+            "text-width": "large",
+            "overlap": true,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371666643": {
+          "type": "framework--newsletter",
+          "settings": {
+            "background-color": "none",
+            "heading": "Subscribe to our newsletter",
+            "newsletter--subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1522371685670": {
+          "type": "framework--featured-text",
+          "settings": {
+            "background-color": "none",
+            "heading": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "1522371696540": {
+          "type": "framework--featured-video",
+          "settings": {
+            "video-url": "",
+            "image": "",
+            "full-width": true,
+            "background-color": "light",
+            "section-height": "regular",
+            "darken-video": true,
+            "alt-text": true,
+            "heading": "Video",
+            "sub-heading": "Add a subheading here",
+            "button-text": "button",
+            "button-url": ""
+          }
+        },
+        "1522371710166": {
+          "type": "framework--map",
+          "settings": {
+            "api-key": "",
+            "map-address": "391 Sutter St, San Francisco",
+            "background-color": "light",
+            "theme": "grayscale",
+            "heading": "Map",
+            "address": "<p>391 Sutter St,<br>San Francisco<br>CA 94108, USA<br><br>(555) 555-5555<\/p>",
+            "hours": "<p><strong>Monday - Friday<\/strong><br>12pm - 8pm<br><br><strong>Saturday - Sunday<\/strong><br>12pm - 5pm<\/p>",
+            "image": ""
+          }
+        },
+        "1522371753814": {
+          "type": "slideshow",
+          "blocks": {
+            "1522371753814-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            },
+            "1522371753814-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            }
+          },
+          "block_order": [
+            "1522371753814-0",
+            "1522371753814-1"
+          ],
+          "settings": {
+            "full-width": true,
+            "autoplay": false,
+            "transition_style": "default",
+            "rotate-frequency-range": 7
+          }
+        },
+        "1522371819571": {
+          "type": "framework--featured-grid",
+          "blocks": {
+            "1522371819571-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-2": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-3": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371970926": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371976471": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            }
+          },
+          "block_order": [
+            "1522371819571-0",
+            "1522371819571-1",
+            "1522371819571-2",
+            "1522371819571-3",
+            "1522371970926",
+            "1522371976471"
+          ],
+          "settings": {
+            "background-color": "light",
+            "spacing": true,
+            "alternative-color": false,
+            "text-position": "center",
+            "container-width": 4,
+            "width": 3,
+            "mobile-width": "2",
+            "title": "Featured grid",
+            "subtitle": "",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        }
+      },
+      "content_for_index": [
+        "1522371753814",
+        "1522371573233",
+        "1522371819571",
+        "1522371685670",
+        "1522371696540",
+        "1522371486135",
+        "1522371405349",
+        "1522371666643",
+        "1522371710166"
+      ]
+    }
+  }
+}

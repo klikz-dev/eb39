@@ -1,0 +1,676 @@
+{% for block in section.blocks %}
+    {% if block.type == "image-with-text" %}
+        <div
+        class="featured-content--root"
+        style="{% render 'framework--background-colors', bg_color: block.settings.background-color %} padding-bottom: {{ block.settings.padding_bottom }}px !important;"
+        data-section-id="{{ section.id }}"
+        data-full-width="{{ block.settings.full-width }}"
+        data-dark-background="{{ dark_background }}"
+        data-overlap="{{ block.settings.overlap }}"
+        data-transparent-overlap="{{ block.settings.transparent-overlap }}"
+        data-text-exists="{{ text_exists }}"
+        data-text-position="{{ block.settings.text-position }}"
+        data-alternative-color="{{ block.settings.alternative-color }}"
+        data-text-width="{{ block.settings.text-width }}"
+        >
+        {% if cover_link %}<a href="{{ block.settings.link-url }}">{% endif %}
+        <div class="featured-content--container featured-content--container--desktop">
+            <div class="featured-content--image">
+            {% if block.settings.image %}
+                {%
+                render "framework--image",
+                image: block.settings.image,
+                full_width: true
+                %}
+            {% else %}
+                {%
+                render "framework--placeholder",
+                type: "lifestyle",
+                aspect_ratio: 1.45,
+                placeholder_index: 2
+                %}
+            {% endif %}
+            </div>
+
+            {% if
+            block.settings.title != blank or
+            block.settings.description != blank or
+            block.settings.link-text != blank
+            %}
+            <div class="featured-content--text"
+            style="max-width: {{ block.settings.text-wrap-width }}%; min-width: {{ block.settings.text-wrap-width }}%;"
+            >
+                <div class="featured-content--text-container"
+                style="text-align: {{ block.settings.text-align }}; max-width: {{ block.settings.max-width }};"
+                >
+                {% if block.settings.title != blank %}
+                    <h2 class="featured-content--title font--section-heading">
+                    {{ block.settings.title | escape }}
+                    </h2>
+                {% endif %}
+
+                {% if block.settings.description != blank %}
+                    <div class="featured-content--description rte-content font--paragraph">
+                    {{ block.settings.description }}
+                    </div>
+                {% endif %}
+
+                {% if block.settings.link-text != blank %}
+                    <div class="featured-content--link font--block-link">
+                    {% if block.settings.privy-id != "" %}
+                        <a 
+                        onclick="Privy('show', {{ block.settings.privy-id }});"
+                        style="background-image: url('{{ block.settings.link_bg | img_url : 'master' }}'); 
+                        color: {{ block.settings.link_color }};"
+                        >
+                        {{ block.settings.link-text }}
+                        </a>
+                    {% else %}
+                        <a 
+                        href="{{ block.settings.link-url }}"
+                        style="background-image: url('{{ block.settings.link_bg | img_url : 'master' }}'); 
+                        color: {{ block.settings.link_color }};"
+                        >
+                        {{ block.settings.link-text }}
+                        </a>
+                    {% endif %}
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="featured-content--container featured-content--container--mobile">
+            <div class="featured-content--image" style="order: 0;">
+            {% if block.settings.image %}
+                {%
+                render "framework--image",
+                image: block.settings.image-mobile-header,
+                full_width: true
+                %}
+            {% else %}
+                {%
+                render "framework--placeholder",
+                type: "lifestyle",
+                aspect_ratio: 1.45,
+                placeholder_index: 2
+                %}
+            {% endif %}
+            </div>
+
+            {% if block.settings.title != blank %}
+            <h2 class="featured-content--title font--section-heading">
+                {{ block.settings.title | escape }}
+            </h2>
+            {% endif %}
+
+            <div class="featured-content--image">
+            {% if block.settings.image-mobile %}
+                {%
+                render "framework--image",
+                image: block.settings.image-mobile,
+                full_width: true
+                %}
+            {% elsif block.settings.image %}
+                {%
+                render "framework--image",
+                image: block.settings.image,
+                full_width: true
+                %}
+            {% else %}
+                {%
+                render "framework--placeholder",
+                type: "lifestyle",
+                aspect_ratio: 1.45,
+                placeholder_index: 2
+                %}
+            {% endif %}
+            </div>
+
+            {% if
+            block.settings.title != blank or
+            block.settings.description != blank or
+            block.settings.link-text != blank
+            %}
+            <div 
+            class="featured-content--text"
+            style="order: {{ block.settings.description-order-mobile }};"
+            >
+                <div class="featured-content--text-container"
+                style="text-align: {{ block.settings.text-align }}; max-width: {{ block.settings.max-width }};"
+                >
+                {% if block.settings.description != blank %}
+                    <div class="featured-content--description rte-content font--paragraph">
+                    {{ block.settings.description }}
+                    </div>
+                {% endif %}
+
+                {% if block.settings.link-text != blank %}
+                    <div class="featured-content--link font--block-link">
+                    {% if block.settings.privy-id != "" %}
+                        <a 
+                        onclick="Privy('show', {{ block.settings.privy-id }});"
+                        style="background-image: url('{{ block.settings.link_bg | img_url : 'master' }}'); 
+                        color: {{ block.settings.link_color }};"
+                        >
+                        {{ block.settings.link-text }}
+                        </a>
+                    {% else %}
+                        <a 
+                        href="{{ block.settings.link-url }}"
+                        style="background-image: url('{{ block.settings.link_bg | img_url : 'master' }}'); 
+                        color: {{ block.settings.link_color }};"
+                        >
+                        {{ block.settings.link-text }}
+                        </a>
+                    {% endif %}
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% if cover_link %}</a>{% endif %}
+
+        </div>
+        
+    {% elsif block.type == "featured-product" %}
+        {% comment %} Translations {% endcomment %}
+        {% assign add_to_cart_t = 'products.add_to_cart' | t %}
+        {% assign price_t = 'home.onboarding.price' | t %}
+        {% assign vendor_t = 'home.onboarding.vendor' | t %}
+
+        {% comment %} Variables {% endcomment %}
+        {% assign enable_video_looping = block.settings.loop-enabled %}
+        {% assign enable_smart_payment = block.settings.smart_payment_button %}
+        {% assign enable_size_chart = block.settings.product-size-chart-enabled %}
+        {% assign enable_swatches = block.settings.swatches-enabled %}
+        {% assign heading = block.settings.heading %}
+        {% assign low_stock_amount = block.settings.low-in-stock-amount %}
+        {% assign show_vendor = block.settings.show_vendor %}
+        {% assign show_unavailable_form = block.settings.product-unavailable-form-show %}
+        {% assign size_chart_content = block.settings.product-size-chart-page-content %}
+        {% assign size_chart_option = block.settings.product-size-chart-option %}
+        {% assign variant_style = block.settings.variant-style %}
+        {% assign product = all_products[block.settings.featured_product] %}
+        {% assign link = product.url %}
+        {% assign title = product.title %}
+        {% assign vendor = product.vendor %}
+        {% assign vendor_url = product.vendor | url_for_vendor %}
+
+        {% comment %} Onboarding {% endcomment %}
+        {% assign onboarding = true %}
+        {% if block.settings.featured_product != blank %}
+        {% assign onboarding = false %}
+        {% endif %}
+
+        {% if onboarding %}
+        {% assign title = 'home.onboarding.product_title' | t %}
+        {% endif %}
+
+        {% comment %} View {% endcomment %}
+        <div
+        class="featured-product--root"
+        style="{% render 'framework--background-colors', bg_color: block.settings.background-color %}"
+        data-js-class="FrameworkProduct"
+        data-section-id="{{ section.id }}"
+        >
+        <div class="featured-product--container">
+            {% if heading != blank %}
+            <div class="featured-product--header">
+                <h2 class="featured-product--heading" data-item="section-heading">
+                <a href="{{ product.url }}">{{ heading }}</a>
+                </h2>
+            </div>
+            {% endif %}
+
+            <div class="featured-product--body"
+            style="flex-direction: {{ block.settings.direction }}"
+            >
+            {% if onboarding %}
+                <div class="featured-product--placeholder" data-active="true">
+                {%
+                    render "framework--placeholder",
+                    type: "product",
+                    aspect_ratio: 0.75,
+                    placeholder_index: 1
+                %}
+                </div>
+
+            {% else %}
+                <div class="featured-product--wrapper">
+                {% for media in product.media %}
+                    {%
+                    render "framework--product--media",
+                    view: "featured",
+                    product: product,
+                    product_media: media,
+                    enable_video_looping: enable_video_looping
+                    %}
+                {% endfor %}
+                
+                {% if block.settings.thumb_display != "hide" %}
+                    {%
+                    render "framework--product--media",
+                    view: "media-dependencies",
+                    product: product
+                    %}
+
+                    {% if product.media.size > 1 %}
+                    {%
+                        render "framework--product--media",
+                        view: "thumbs",
+                        product: product
+                    %}
+                    {% endif %}
+                {% endif %}
+                </div>
+
+            {% endif %}
+
+            <div class="featured-product--info">
+                <div class="featured-product--info--container">
+
+                <h2 data-item="section-heading">
+                    {{ title }}.
+                </h2>
+
+                <div class="featured-product--info--content">
+                    {{ product.content }}
+                </div>
+
+                {% if block.settings.form_display != "hide" %}
+                    <h2 data-item="section-heading">
+                    <a href="{{ product.url }}">{{ title }}</a>
+                    </h2>
+
+                    {% if show_vendor %}
+                    <div class="featured-product--vendor" data-item="accent-text">
+                    <a href="{{ vendor_url }}">{{ vendor_t }}</a>
+                    </div>
+                    {% endif %}
+
+                    {% if onboarding %}
+                    <div class="product-form--price-wrapper">
+                        <span class="product-form--price" data-item='accent-text'>
+                        {{ price_t }}
+                        </span>
+                    </div>
+
+                    <a class="featured-product--add-to-cart" data-item="button">
+                        <div>
+                        {{ add_to_cart_t }}
+                        </div>
+                    </a>
+                    {% else %}
+                    {%
+                        render "framework--product--form",
+                        product: product,
+                        enable_smart_payment: enable_smart_payment,
+                        enable_swatches: enable_swatches,
+                        variant_style: variant_style,
+                        low_stock_amount: low_stock_amount,
+                        enable_size_chart: enable_size_chart,
+                        size_chart_content: size_chart_content,
+                        size_chart_option: size_chart_option,
+                        show_unavailable_form: show_unavailable_form
+                    %}
+                    {% endif %}
+                {% endif %}
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+        </div>
+    {% else %}
+        
+    {% endif %}
+
+{% endfor %}
+{% comment %} </section> {% endcomment %}
+
+{% schema %}
+    {
+        "name": "Custom Page Section",
+        "class": "framework--product-page",
+        "settings": [
+        ],
+        "blocks": [
+            {
+                "type": "image-with-text",
+                "name": "Image with Text",
+                "settings": [
+                    {
+                    "type": "header",
+                    "content": "Layout and Color"
+                    },
+                    {
+                    "id": "full-width",
+                    "label": "Full width",
+                    "type": "checkbox",
+                    "default": false
+                    },
+                    {
+                    "id": "background-color",
+                    "label": "Background color",
+                    "type": "select",
+                    "options": [
+                        { "label": "None", "value": "none" },
+                        { "label": "Light grey", "value": "light" },
+                        { "label": "Dark", "value": "dark" },
+                        { "label": "Accent", "value": "accent" }
+                    ],
+                    "default": "light"
+                    },
+                    {
+                    "type": "range",
+                    "id": "padding_bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 2,
+                    "unit": "px",
+                    "label": "Bottom Padding",
+                    "default": 48
+                    },
+                    {
+                    "id": "text-position",
+                    "label": "Text Position",
+                    "type": "select",
+                    "options": [
+                        { "label": "Top", "value": "top" },
+                        { "label": "Bottom", "value": "bottom" },
+                        { "label": "Left", "value": "left" },
+                        { "label": "Center", "value": "center" },
+                        { "label": "Right", "value": "right" }
+                    ],
+                    "default": "left"
+                    },
+                    {
+                    "id": "text-align",
+                    "label": "Text Align",
+                    "type": "select",
+                    "options": [
+                        { "label": "Left", "value": "left" },
+                        { "label": "Center", "value": "center" },
+                        { "label": "Right", "value": "right" }
+                    ],
+                    "default": "center"
+                    },
+                    {
+                    "type": "text",
+                    "id": "max-width",
+                    "label": "Text Container Max Width",
+                    "default": "500px"
+                    },
+                    {
+                    "id": "text-width",
+                    "label": "Text width",
+                    "type": "radio",
+                    "options": [
+                        { "value": "small", "label": "Small"},
+                        { "value": "large", "label": "Large"}
+                    ],
+                    "default": "large"
+                    },
+                    {
+                    "type": "range",
+                    "id": "text-wrap-width",
+                    "min": 20,
+                    "max": 70,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Text Wrapper Width",
+                    "default": 50
+                    },
+                    {
+                    "id": "overlap",
+                    "label": "Overlap text",
+                    "type": "checkbox",
+                    "default": true,
+                    "info": "Not applicable for centered text"
+                    },
+                    {
+                    "id": "transparent-overlap",
+                    "label": "Transparent text background",
+                    "type": "checkbox",
+                    "default": false
+                    },
+                    {
+                    "id": "alternative-color",
+                    "label": "Use alternative text color",
+                    "type": "checkbox",
+                    "default": false,
+                    "info": "This can found under theme settings below."
+                    },
+                    {
+                    "type": "header",
+                    "content": "Content"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "image-mobile-header",
+                    "label": "Mobile Header Image"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "image-mobile",
+                    "label": "Mobile Image"
+                    },
+                    {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Image with text"
+                    },
+                    {
+                    "type": "html",
+                    "id": "description",
+                    "label": "Text",
+                    "default": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store</p>"
+                    },
+                    {
+                    "type": "text",
+                    "id": "description-order-mobile",
+                    "label": "Description Order on Mobile",
+                    "default": "2"
+                    },
+                    {
+                    "type": "url",
+                    "id": "link-url",
+                    "label": "Link"
+                    },
+                    {
+                    "type": "text",
+                    "id": "privy-id",
+                    "label": "Popup ID",
+                    "default": "1837214"
+                    },
+                    {
+                    "type": "text",
+                    "id": "link-text",
+                    "label": "Link text"
+                    },
+                    {
+                    "type": "color",
+                    "id": "link_color",
+                    "label": "Link Color",
+                    "default": "#000000"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "link_bg",
+                    "label": "Link Background Image"
+                    }
+                ]
+            },
+            {
+                "type": "featured-product",
+                "name": "Featured product",
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "direction",
+                        "label": "Image Position",
+                        "options": [
+                        {
+                        "value": "row",
+                        "label": "Left"
+                        },
+                        {
+                        "value": "row-reverse",
+                        "label": "Right"
+                        }
+                        ],
+                        "default": "row"
+                    },
+                    {
+                        "type": "select",
+                        "id": "form_display",
+                        "label": "Show Form?",
+                        "options": [
+                        {
+                        "value": "hide",
+                        "label": "No"
+                        },
+                        {
+                        "value": "block",
+                        "label": "Yes"
+                        }
+                        ],
+                        "default": "hide"
+                    },
+                    {
+                        "type": "select",
+                        "id": "thumb_display",
+                        "label": "Show Media Thumbs?",
+                        "options": [
+                        {
+                        "value": "hide",
+                        "label": "No"
+                        },
+                        {
+                        "value": "block",
+                        "label": "Yes"
+                        }
+                        ],
+                        "default": "hide"
+                    },
+                    {
+                        "id": "background-color",
+                        "label": "Background color",
+                        "type": "select",
+                        "options": [
+                        { "label": "None", "value": "none" },
+                        { "label": "Light grey", "value": "light" },
+                        { "label": "Accent", "value": "accent" }
+                        ],
+                        "default": "none"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "smart_payment_button",
+                        "label": "Show dynamic checkout button",
+                        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                        "default": true
+                    },
+                    {
+                        "id": "heading",
+                        "label": "Heading",
+                        "type": "text"
+                    },
+                    {
+                        "type": "product",
+                        "id": "featured_product",
+                        "label": "Product"
+                    },
+                    {
+                        "id": "show_vendor",
+                        "label": "Show vendor",
+                        "type": "checkbox",
+                        "default": false
+                    },
+                    {
+                        "type": "select",
+                        "id": "variant-style",
+                        "label": "Product variant style",
+                        "options": [
+                        { "label": "Dropdowns", "value": "dropdowns" },
+                        { "label": "Buttons", "value": "buttons" }
+                        ],
+                        "default": "dropdowns"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "swatches-enabled",
+                        "label": "Enable color swatches",
+                        "default": false,
+                        "info": "Automatically turn color options into swatches. [Learn more](https://support.troopthemes.com/guide/color-swatch-guide)"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "product-unavailable-form-show",
+                        "label": "Show notification form when product is unavailable"
+                    },
+                    {
+                        "label": "Show low in stock notice when quantity is",
+                        "id": "low-in-stock-amount",
+                        "type": "range",
+                        "min": 0,
+                        "max": 10,
+                        "step": 1,
+                        "default": 0,
+                        "info": "Set to 0 to disable this feature. Updated for each variant."
+                    },
+                    {
+                        "type": "header",
+                        "content": "Media"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)."
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "loop-enabled",
+                        "label": "Enable video looping",
+                        "default": false
+                    },
+                    {
+                        "type": "header",
+                        "content": "Size chart"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "product-size-chart-enabled",
+                        "label": "Enable",
+                        "default": false
+                    },
+                    {
+                        "type": "text",
+                        "id": "product-size-chart-option",
+                        "label": "Link from option",
+                        "default": "size"
+                    },
+                    {
+                        "type": "page",
+                        "id": "product-size-chart-page-content",
+                        "label": "Page content"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

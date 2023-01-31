@@ -1,0 +1,383 @@
+{% comment %} Variables {% endcomment %}
+{% capture general_settings %}
+  {{ settings.color--alternative }}
+  {{ settings.color--accent }}
+{% endcapture %}
+
+{% assign header_text_exists = true %}
+{% if section.settings.title == blank and section.settings.subtitle == blank %}
+  {% assign header_text_exists = false %}
+{% endif %}
+
+{% assign color_brightness = bg_color | color_brightness %}
+{% assign dark_background = false %}
+{% if color_brightness < 200 %}
+  {% assign dark_background = true %}
+{% endif %}
+
+{% assign text_exists = true %}
+{% if section.settings.title == blank and section.settings.description == blank %}
+  {% assign text_exists = false %}
+{% endif %}
+
+{% assign cover_link = false %}
+{% if section.settings.link-text == blank and section.settings.link-url != blank %}
+  {% assign cover_link = true %}
+{% endif %}
+
+{% comment %} View {% endcomment %}
+<div
+  class="featured-content--root"
+  style="{% render 'framework--background-colors', bg_color: section.settings.background-color %} padding-bottom: {{ section.settings.padding_bottom }}px !important;"
+  data-section-id="{{ section.id }}"
+  data-full-width="{{ section.settings.full-width }}"
+  data-dark-background="{{ dark_background }}"
+  data-overlap="{{ section.settings.overlap }}"
+  data-transparent-overlap="{{ section.settings.transparent-overlap }}"
+  data-text-exists="{{ text_exists }}"
+  data-text-position="{{ section.settings.text-position }}"
+  data-alternative-color="{{ section.settings.alternative-color }}"
+  data-text-width="{{ section.settings.text-width }}"
+>
+  {% if cover_link %}<a href="{{ section.settings.link-url }}">{% endif %}
+  <div class="featured-content--container featured-content--container--desktop">
+    <div class="featured-content--image">
+      {% if section.settings.image %}
+        {%
+          render "framework--image",
+          image: section.settings.image,
+          full_width: true
+        %}
+      {% else %}
+        {%
+          render "framework--placeholder",
+          type: "lifestyle",
+          aspect_ratio: 1.45,
+          placeholder_index: 2
+        %}
+      {% endif %}
+    </div>
+
+    {% if
+      section.settings.title != blank or
+      section.settings.description != blank or
+      section.settings.link-text != blank
+    %}
+      <div class="featured-content--text"
+      style="max-width: {{ section.settings.text-wrap-width }}%; min-width: {{ section.settings.text-wrap-width }}%;"
+      >
+        <div class="featured-content--text-container"
+        style="text-align: {{ section.settings.text-align }}; max-width: {{ section.settings.max-width }};"
+        >
+          {% if section.settings.title != blank %}
+            <h2 class="featured-content--title font--section-heading">
+              {{ section.settings.title | escape }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div class="featured-content--description rte-content font--paragraph">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.link-text != blank %}
+            <div class="featured-content--link font--block-link">
+              {% if section.settings.privy-id != "" %}
+                <a 
+                onclick="Privy('show', {{ section.settings.privy-id }});"
+                style="background-image: url('{{ section.settings.link_bg | img_url : 'master' }}'); 
+                color: {{ section.settings.link_color }};"
+                >
+                  {{ section.settings.link-text }}
+                </a>
+              {% else %}
+                <a 
+                href="{{ section.settings.link-url }}"
+                style="background-image: url('{{ section.settings.link_bg | img_url : 'master' }}'); 
+                color: {{ section.settings.link_color }};"
+                >
+                  {{ section.settings.link-text }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <div class="featured-content--container featured-content--container--mobile">
+    <div class="featured-content--image" style="order: 0;">
+      {% if section.settings.image %}
+        {%
+          render "framework--image",
+          image: section.settings.image-mobile-header,
+          full_width: true
+        %}
+      {% else %}
+        {%
+          render "framework--placeholder",
+          type: "lifestyle",
+          aspect_ratio: 1.45,
+          placeholder_index: 2
+        %}
+      {% endif %}
+    </div>
+
+    {% if section.settings.title != blank %}
+      <h2 class="featured-content--title font--section-heading">
+        {{ section.settings.title | escape }}
+      </h2>
+    {% endif %}
+
+    <div class="featured-content--image">
+      {% if section.settings.image-mobile %}
+        {%
+          render "framework--image",
+          image: section.settings.image-mobile,
+          full_width: true
+        %}
+      {% elsif section.settings.image %}
+        {%
+          render "framework--image",
+          image: section.settings.image,
+          full_width: true
+        %}
+      {% else %}
+        {%
+          render "framework--placeholder",
+          type: "lifestyle",
+          aspect_ratio: 1.45,
+          placeholder_index: 2
+        %}
+      {% endif %}
+    </div>
+
+    {% if
+      section.settings.title != blank or
+      section.settings.description != blank or
+      section.settings.link-text != blank
+    %}
+      <div 
+      class="featured-content--text"
+      style="order: {{ section.settings.description-order-mobile }};"
+      >
+        <div class="featured-content--text-container"
+        style="text-align: {{ section.settings.text-align }}; max-width: {{ section.settings.max-width }};"
+        >
+          {% if section.settings.description != blank %}
+            <div class="featured-content--description rte-content font--paragraph">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.link-text != blank %}
+            <div class="featured-content--link font--block-link">
+              {% if section.settings.privy-id != "" %}
+                <a 
+                onclick="Privy('show', {{ section.settings.privy-id }});"
+                style="background-image: url('{{ section.settings.link_bg | img_url : 'master' }}'); 
+                color: {{ section.settings.link_color }};"
+                >
+                  {{ section.settings.link-text }}
+                </a>
+              {% else %}
+                <a 
+                href="{{ section.settings.link-url }}"
+                style="background-image: url('{{ section.settings.link_bg | img_url : 'master' }}'); 
+                color: {{ section.settings.link_color }};"
+                >
+                  {{ section.settings.link-text }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% if cover_link %}</a>{% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout and Color"
+    },
+    {
+      "id": "full-width",
+      "label": "Full width",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "id": "background-color",
+      "label": "Background color",
+      "type": "select",
+      "options": [
+        { "label": "None", "value": "none" },
+        { "label": "Light grey", "value": "light" },
+        { "label": "Dark", "value": "dark" },
+        { "label": "Accent", "value": "accent" }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 48
+    },
+    {
+      "id": "text-position",
+      "label": "Text Position",
+      "type": "select",
+      "options": [
+        { "label": "Top", "value": "top" },
+        { "label": "Bottom", "value": "bottom" },
+        { "label": "Left", "value": "left" },
+        { "label": "Center", "value": "center" },
+        { "label": "Right", "value": "right" }
+      ],
+      "default": "left"
+    },
+    {
+      "id": "text-align",
+      "label": "Text Align",
+      "type": "select",
+      "options": [
+        { "label": "Left", "value": "left" },
+        { "label": "Center", "value": "center" },
+        { "label": "Right", "value": "right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "max-width",
+      "label": "Text Container Max Width",
+      "default": "500px"
+    },
+    {
+      "id": "text-width",
+      "label": "Text width",
+      "type": "radio",
+      "options": [
+        { "value": "small", "label": "Small"},
+        { "value": "large", "label": "Large"}
+      ],
+      "default": "large"
+    },
+    {
+      "type": "range",
+      "id": "text-wrap-width",
+      "min": 20,
+      "max": 70,
+      "step": 1,
+      "unit": "%",
+      "label": "Text Wrapper Width",
+      "default": 50
+    },
+    {
+      "id": "overlap",
+      "label": "Overlap text",
+      "type": "checkbox",
+      "default": true,
+      "info": "Not applicable for centered text"
+    },
+    {
+      "id": "transparent-overlap",
+      "label": "Transparent text background",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "id": "alternative-color",
+      "label": "Use alternative text color",
+      "type": "checkbox",
+      "default": false,
+      "info": "This can found under theme settings below."
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-mobile-header",
+      "label": "Mobile Header Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-mobile",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Text",
+      "default": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store</p>"
+    },
+    {
+      "type": "text",
+      "id": "description-order-mobile",
+      "label": "Description Order on Mobile",
+      "default": "2"
+    },
+    {
+      "type": "url",
+      "id": "link-url",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "privy-id",
+      "label": "Popup ID",
+      "default": "1837214"
+    },
+    {
+      "type": "text",
+      "id": "link-text",
+      "label": "Link text"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "link_bg",
+      "label": "Link Background Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

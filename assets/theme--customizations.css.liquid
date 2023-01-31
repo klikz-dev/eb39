@@ -1,0 +1,328 @@
+{% comment %}
+  Here's an example of a customization
+  You can paste this at the bottom of the page to see how it works
+
+  /* Author - Date - Customization */
+  /* E.g. Troop Themes - 12th November .... - Changed paragraph colors */
+  @media only screen and (max-width: 767px) { /* mobile */
+    body {
+      color: blue;
+    }
+  }
+
+  @media only screen and (min-width: 768px) { /* desktop */
+    body {
+      color: green;
+    }
+  }
+{% endcomment %}
+
+:root {
+    --font--section-heading--size: 42px;
+    --font--block-heading--size: 42px;
+    --font--heading--uppercase: normal;
+    --font--paragraph--size: 25px;
+    --font--heading--family: "Decima", Consolas, monospace;
+    --font--heading--weight: 700;
+    --font--heading--normal-weight: 400;
+    --font--heading--style: normal;
+    --font--accent--family: "Decima Bold", Consolas, monospace;
+    --font--accent--weight: 700;
+    --font--accent--style: normal;
+    --font--paragraph--family: "Decima", Consolas, monospace;
+    --font--paragraph--weight: 400;
+    --font--paragraph--style: normal;
+    --font--bolder-paragraph--weight: 700;
+    --image--loading-animation: url(//cdn.shopify.com/s/files/1/0486/5628/5856/t/5/assets/AjaxLoader.gif?v=6643103100573399637);
+    --image--grabbing-icon: url(//cdn.shopify.com/s/files/1/0486/5628/5856/t/5/assets/grabbing.png?v=1629955…);
+}
+
+@media only screen and (max-width: 1495px) {
+  :root {
+    --font--section-heading--size: 34px;
+    --font--block-heading--size: 34px;
+    --font--paragraph--size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  :root {
+    --font--section-heading--size: 22px;
+    --font--block-heading--size: 22px;
+    --font--paragraph--size: 16px;
+  }
+}
+
+@media only screen and (max-width: 979px) {
+  :root {
+    --font--section-heading--size: 14px;
+    --font--block-heading--size: 14px;
+    --font--paragraph--size: 12px;
+  }
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.off-canvas--viewport {
+    max-width: 1920px;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.shopify-section {
+  overflow: hidden;
+}
+
+.featured-content--link a {
+  background-repeat: no-repeat;
+  font-size: 1em;
+  background-size: cover;
+  border: 2px solid;
+  padding: 0.8em;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.featured-content--title {
+    padding-bottom: 0;
+}
+
+[data-item='section-heading'], .font--section-heading, h1, h2 {
+    line-height: 1.0714em;
+    margin-bottom: 1.0714em;
+}
+
+.featured-content--link a::after {
+  display: none;
+}
+
+.rte-content > *:not(:last-child) {
+  padding-bottom: 0;
+}
+
+.featured-product--info--container > * {
+    padding-bottom: 0;
+}
+
+p {
+  margin-bottom: 1.6em;
+}
+
+.featured-product--info--container {
+  max-width: 578px;
+  text-align: center;
+}
+
+.template--index .layout--main-content .shopify-section {
+    padding: 0 48px 0px;
+}
+
+.featured-product--root {
+  padding: 0 48px;
+}
+
+.featured-product--container {
+  max-width: unset;
+}
+
+.roicon {
+  position: relative;
+}
+
+.roicon > span {
+  padding: 0 10px;
+}
+
+.template--index .newsletter--root {
+    margin-right: -48px;
+    margin-left: -48px;
+}
+
+.newsletter--root {
+    padding: 48px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.newsletter--container {
+    max-width: unset;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.newsletter--header {
+    width: 50%;
+}
+
+.newsletter--body {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0 16px;
+    width: 50%;
+}
+
+.newsletter--subheading {
+  font-weight: 700;
+}
+
+input.newsletter--email {
+    height: 3em;
+    line-height: 3em;
+    border: 0;
+    font-size: 1em;
+    font-family: var(--font--paragraph--family);
+    font-weight: var(--font--paragraph--weight);
+}
+
+#newsletter--button {
+    height: 3em;
+    line-height: 3em;
+    padding: 0 2em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 1em;
+    text-transform: none;
+    color: #ffffff;
+}
+
+.footer--root {
+    display: flex;
+    padding: 0 24px;
+}
+
+.footer--root > *:not(:last-child) {
+    padding-bottom: 0;
+}
+
+.footer--text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer--image {
+  width: 150px;
+}
+
+.featured-content--container--desktop {
+    display: flex;
+}
+
+.featured-content--container--mobile {
+    display: none;
+}
+
+.template--product .layout--main-content {
+    padding: 0 !important;
+}
+
+.template--collection .layout--main-content {
+    padding: 0 !important;
+}
+
+.template--product .layout--main-content .featured-content--root[data-full-width='true'] {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.template--collection .layout--main-content .featured-content--root[data-full-width='true'] {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.featured-product--root {
+    padding: 0;
+}
+
+.direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+@media only screen and (min-width: 768px) {
+  .featured-product--body {
+    margin: 0;
+  }
+
+  .direction-row-reverse.featured-product--body > div:first-child, .direction-row.featured-product--body > div:last-child {
+      padding: 0 6% 0 calc(3% + 24px);
+      width: 50%;
+  }
+
+  .direction-row-reverse.featured-product--body > div:last-child, .direction-row.featured-product--body > div:first-child {
+      padding: 0 calc(3% + 24px) 0 6%;
+      width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .roicon > img {
+    width: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .template--index .layout--main-content .shopify-section {
+      padding: 0;
+  }
+
+  [data-item='section-heading'], .font--section-heading, h1, h2 {
+      padding-top: 0;
+      margin-top: 1.0714em;
+      text-align: center;
+  }
+
+  .featured-content--root {
+      padding: 0px !important;
+  }
+
+  .featured-content--text-container {
+    text-align: center !important;
+  }
+
+  .roicon > img {
+    width: 32px;
+  }
+
+  .featured-content--container--desktop {
+    display: none;
+  }
+
+  .featured-content--container--mobile {
+    display: flex;
+  }
+
+  .newsletter--header {
+    width: 100%;
+  }
+
+  .newsletter--body {
+    width: 100%;
+  }
+
+  input.newsletter--email {
+    height: 3em;
+    margin: 0;
+  }
+
+  .footer--text {
+    font-size: 1.2em;
+    max-width: 240px;
+    margin: 2em auto 0;
+  }
+
+  .footer--image {
+    margin: auto;
+  }
+
+  .featured-content--description {
+    margin: 1em 0;
+  }
+}
